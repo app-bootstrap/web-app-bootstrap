@@ -1,8 +1,9 @@
 .travis.yml
 test/
+.babelrc
 .eslintrc.js
 .eslintignore
-dist/
+.stylelintrc.js
 coverage/
 screenshots/
 node_modules/

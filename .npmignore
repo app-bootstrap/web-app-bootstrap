@@ -1,3 +1,7 @@
+.travis.yml
+test/
+.eslintrc.js
+.eslintignore
 dist/
 coverage/
 screenshots/

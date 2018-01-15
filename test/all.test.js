@@ -28,9 +28,24 @@ describe('test/vuex.test.js', () => {
         .quit();
     });
 
-    it('page render should be ok', () => {
+    it('vuex render should be ok', () => {
       return driver
         .getUrl(`${BASE_URL}/vuex`);
+    });
+
+    it('redux render should be ok', () => {
+      return driver
+        .getUrl(`${BASE_URL}/redux`);
+    });
+
+    it('flux render should be ok', () => {
+      return driver
+        .getUrl(`${BASE_URL}/flux`);
+    });
+
+    it('mobx render should be ok', () => {
+      return driver
+        .getUrl(`${BASE_URL}/mobx`);
     });
   });
 });

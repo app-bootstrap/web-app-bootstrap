@@ -6,7 +6,8 @@ const config = {
   entry: {
     vuex: path.resolve('vuex'),
     flux: path.resolve('flux'),
-    redux: path.resolve('redux')
+    redux: path.resolve('redux'),
+    mobx: path.resolve('mobx')
   },
   output: {
     path: path.join(__dirname, 'dist'),
@@ -39,7 +40,7 @@ const config = {
         exclude: /node_modules/
       }, {
         test: /\.less$/,
-        loader: 'style-loader!css-loader!less-loader'
+        loader: 'style-loader!css-loader!less-loader!postcss-loader'
       }
     ]
   }

@@ -1,7 +1,16 @@
 'use strict';
 
+import {
+  bindActionCreators
+} from 'redux';
+import {
+  connect
+} from 'react-redux';
 import React from 'react';
+import PropTypes from 'prop-types';
 import classnames from 'classnames';
+
+import * as actions from './actions';
 
 import '../assets/base.less';
 import '../assets/app.less';
@@ -18,24 +27,15 @@ const selectedClass = (type) => {
   });
 };
 
-function View(props) {
-  const viewFilter = (type) => {
-    const all = [].concat(props.todos).reverse();
-    switch (type) {
-      case 'all':
-        return all;
-      case 'active':
-        return all.filter(item => !item.completed);
-      case 'completed':
-        return all.filter(item => item.completed);
-      default:
-        return all;
-    }
-  };
-
+const App = ({
+  actions,
+  todos,
+  active,
+  completed
+}) => {
   window.onhashchange = () => {
     const state = getHashState();
-    props.actions.setVisibilityFilter(state);
+    actions.setVisibilityFilter(state);
   };
   return (
     <div>
@@ -51,7 +51,7 @@ function View(props) {
                 if (e.keyCode === ENTER_KEY_CODE) {
                   const value = e.target.value.trim();
                   if (value) {
-                    props.actions.add(value);
+                    actions.add(value);
                     e.target.value = '';
                   }
                 }
@@ -65,14 +65,14 @@ function View(props) {
             type='checkbox'
             onChange={
               e => {
-                props.actions[e.target.checked ? 'completedAll' : 'uncompletedAll']();
+                actions[e.target.checked ? 'completedAll' : 'uncompletedAll']();
               }
             }
           />
           <label htmlFor='toggle-all'>Mark all as complete</label>
           <ul id='todo-list'>
             {
-              viewFilter(props.hash).map((item, key) => {
+              [].concat(todos).reverse().map((item, key) => {
                 return (
                   <li
                     data-id={item.id}
@@ -83,7 +83,7 @@ function View(props) {
                     onDoubleClick={
                       e => {
                         const id = e.currentTarget.getAttribute('data-id');
-                        props.actions.edit(id);
+                        actions.edit(id);
                         const target = e.currentTarget.querySelector('input.edit');
                         setTimeout(() => target.focus(), 0);
                       }
@@ -99,7 +99,7 @@ function View(props) {
                         onChange={
                           e => {
                             const id = e.currentTarget.getAttribute('data-id');
-                            props.actions.compelete(id);
+                            actions.compelete(id);
                           }
                         }
                       />
@@ -110,7 +110,7 @@ function View(props) {
                         onClick={
                           e => {
                             const id = e.currentTarget.getAttribute('data-id');
-                            props.actions.remove(id);
+                            actions.remove(id);
                           }
                         }
                       />
@@ -123,7 +123,7 @@ function View(props) {
                         e => {
                           const value = e.target.value.trim();
                           const id = e.target.getAttribute('data-id');
-                          props.actions.updateItem({
+                          actions.updateItem({
                             id,
                             value
                           });
@@ -134,7 +134,7 @@ function View(props) {
                           const value = e.target.value.trim();
                           const id = e.target.getAttribute('data-id');
                           if (e.keyCode === ENTER_KEY_CODE) {
-                            props.actions.update({
+                            actions.update({
                               id,
                               value
                             });
@@ -145,7 +145,7 @@ function View(props) {
                         e => {
                           const value = e.target.value.trim();
                           const id = e.currentTarget.getAttribute('data-id');
-                          props.actions.update({
+                          actions.update({
                             id,
                             value
                           });
@@ -160,7 +160,7 @@ function View(props) {
         </section>
         <footer id='footer'>
           <span id='todo-count'>
-            <strong>{viewFilter('active').length}</strong> {viewFilter('active').length === 1 ? 'item' : 'items'} left
+            <strong>{active.length}</strong> {active.length === 1 ? 'item' : 'items'} left
           </span>
           <ul id='filters'>
             <li>
@@ -177,11 +177,11 @@ function View(props) {
             id='clear-completed'
             onClick={
               e => {
-                props.actions.clearCompleted();
+                actions.clearCompleted();
               }
             }
           >
-            {`Clear completed (${viewFilter('completed').length})`}
+            {`Clear completed (${completed.length})`}
           </button>
         </footer>
       </section>
@@ -190,6 +190,36 @@ function View(props) {
       </footer>
     </div>
   );
-}
+};
 
-export default View;
+App.propTypes = {
+  actions: PropTypes.object,
+  todos: PropTypes.array,
+  active: PropTypes.array,
+  completed: PropTypes.array
+};
+
+const getVisibleTodos = (todos, filter) => {
+  switch (filter) {
+    case 'all':
+      return todos;
+    case 'completed':
+      return todos.filter(t => t.completed);
+    case 'active':
+      return todos.filter(t => !t.completed);
+    default:
+      throw new Error('Unknown filter: ' + filter);
+  }
+};
+
+const mapStateToProps = state => ({
+  todos: getVisibleTodos(state.todos, state.visibilityFilter),
+  active: getVisibleTodos(state.todos, 'active'),
+  completed: getVisibleTodos(state.todos, 'completed')
+});
+
+const mapDispatchToProps = dispatch => ({
+  actions: bindActionCreators(actions, dispatch)
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

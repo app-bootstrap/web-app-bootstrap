@@ -4,17 +4,26 @@ import {
   Container
 } from 'flux/utils';
 
-import store from './store';
+import todoStore from './store/todo';
+import typeStore from './store/type';
 import View from './view.jsx';
+import * as actions from './actions';
 
 function getStores() {
   return [
-    store
+    todoStore,
+    typeStore
   ];
 }
 
 function getState() {
-  return {};
+  return {
+    todos: todoStore.getState(),
+    hash: typeStore.getState(),
+    actions: {
+      ...actions
+    }
+  };
 }
 
 export default Container.createFunctional(View, getStores, getState);

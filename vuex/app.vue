@@ -67,9 +67,9 @@
         </ul>
         <button
           id="clear-completed"
-          @click.prevent="clearAll"
+          @click.prevent="clearCompleted"
         >
-          {{`Clear completed (${getActive.length})`}}
+          {{`Clear completed (${getCompleted.length})`}}
         </button>
       </footer>
     </section>
@@ -170,8 +170,8 @@ export default {
       this.$store.commit(e.target.checked ? 'completedAll' : 'uncompletedAll');
       this.toggleAllChecked = !this.toggleAllChecked;
     },
-    clearAll: function(e) {
-      this.$store.commit('completedAll');
+    clearCompleted: function(e) {
+      this.$store.commit('clearCompleted');
     }
   }
 };

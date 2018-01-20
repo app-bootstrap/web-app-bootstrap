@@ -4,6 +4,7 @@ test/
 .eslintrc.js
 .eslintignore
 .stylelintrc.js
+postcss.config.js
 coverage/
 screenshots/
 node_modules/

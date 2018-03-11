@@ -17,6 +17,7 @@
     "prepublish": "npm run build",
     "serve": "npm run dev:test &",
     "test": "macaca run -d ./test --reporter macaca-reporter",
+    "test:vuex": "macaca run -d ./test/vuex.test.js --verbose",
     "ci": "npm run lint && npm run serve && npm run test"
   },
   "precommit": [
@@ -49,10 +50,8 @@
     "less": "^2.7.3",
     "less-loader": "^4.0.5",
     "macaca-cli": "^2.0.12",
-    "macaca-coverage": "^1.0.0",
     "macaca-electron": "^1.1.17",
-    "macaca-reporter": "^1.0.36",
-    "macaca-wd": "^1.0.18",
+    "macaca-wd": "^1.0.24",
     "marked": "^0.3.4",
     "mobx": "^3.4.1",
     "mobx-react": "^4.3.5",

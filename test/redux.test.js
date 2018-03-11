@@ -1,11 +1,15 @@
 'use strict';
 
 import {
+  webpackHelper
+} from 'macaca-wd';
+
+const {
   driver,
   BASE_URL
-} from './helper';
+} = webpackHelper;
 
-describe('test/vuex.test.js', () => {
+describe('test/redux.test.js', () => {
   describe('page func testing', () => {
     before(() => {
       return driver
@@ -28,24 +32,12 @@ describe('test/vuex.test.js', () => {
         .quit();
     });
 
-    it('vuex render should be ok', () => {
-      return driver
-        .getUrl(`${BASE_URL}/vuex`);
-    });
-
-    it('redux render should be ok', () => {
+    it('render should be ok', () => {
       return driver
         .getUrl(`${BASE_URL}/redux`);
     });
 
-    it('flux render should be ok', () => {
-      return driver
-        .getUrl(`${BASE_URL}/flux`);
-    });
-
-    it('mobx render should be ok', () => {
-      return driver
-        .getUrl(`${BASE_URL}/mobx`);
-    });
   });
 });
+
+

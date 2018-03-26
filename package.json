@@ -7,7 +7,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/enoughjs/dataflow-sample.git"
+    "url": "https://github.com/app-bootstrap/dataflow-sample.git"
   },
   "scripts": {
     "dev": "webpack-dev-server",

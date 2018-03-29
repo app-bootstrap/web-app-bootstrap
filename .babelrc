@@ -1,7 +1,12 @@
 {
   presets: [
+    'react',
     'env',
-    'stage-2'
+    'es2015',
+    'stage-1'
+  ],
+  plugins: [
+    'transform-decorators-legacy'
   ],
   comments: false,
   env: {

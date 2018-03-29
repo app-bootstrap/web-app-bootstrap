@@ -36,8 +36,6 @@ describe('test/redux.test.js', () => {
       return driver
         .getUrl(`${BASE_URL}/redux`);
     });
-
   });
 });
-
 

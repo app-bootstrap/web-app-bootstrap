@@ -36,8 +36,6 @@ describe('test/mobx.test.js', () => {
       return driver
         .getUrl(`${BASE_URL}/mobx`);
     });
-
   });
 });
-
 

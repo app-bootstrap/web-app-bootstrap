@@ -23,13 +23,7 @@ const config = {
       }, {
         test: /\.jsx?/,
         loader: 'babel-loader',
-        exclude: /node_modules/,
-        options: {
-          presets: [
-            'stage-2',
-            'react'
-          ]
-        }
+        exclude: /node_modules/
       }, {
         test: /\.vue$/,
         loader: 'vue-loader',

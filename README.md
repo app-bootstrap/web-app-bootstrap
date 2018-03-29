@@ -18,6 +18,14 @@
 
 - [app-bootstrap/todo](//github.com/app-bootstrap/todo)
 
-## TODO
+<!-- GITCONTRIBUTOR_START -->
 
-- vue input focus
+## Contributors
+
+|[<img src="https://avatars1.githubusercontent.com/u/1011681?v=4" width="100px;"/><br/><sub><b>xudafeng</b></sub>](https://github.com/xudafeng)<br/>
+| :---: |
+
+
+This project follows the git-contributor [spec](https://github.com/xudafeng/git-contributor), auto upated at `Thu Mar 29 2018 01:25:36 GMT+0800`.
+
+<!-- GITCONTRIBUTOR_END -->

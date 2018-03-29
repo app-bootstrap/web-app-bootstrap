@@ -1,4 +1,4 @@
-# dataflow-sample
+# awesome-practice-projects
 
 ---
 
@@ -7,12 +7,12 @@
 [![Test coverage][coveralls-image]][coveralls-url]
 [![node version][node-image]][node-url]
 
-[npm-image]: http://img.shields.io/npm/v/dataflow-sample.svg?style=flat-square
-[npm-url]: http://npmjs.org/package/dataflow-sample
-[travis-image]: https://img.shields.io/travis/app-bootstrap/dataflow-sample.svg?style=flat-square
-[travis-url]: https://travis-ci.org/app-bootstrap/dataflow-sample
-[coveralls-image]: https://img.shields.io/coveralls/app-bootstrap/dataflow-sample.svg?style=flat-square
-[coveralls-url]: https://coveralls.io/r/app-bootstrap/dataflow-sample?branch=master
+[npm-image]: http://img.shields.io/npm/v/awesome-practice-projects.svg?style=flat-square
+[npm-url]: http://npmjs.org/package/awesome-practice-projects
+[travis-image]: https://img.shields.io/travis/app-bootstrap/awesome-practice-projects.svg?style=flat-square
+[travis-url]: https://travis-ci.org/app-bootstrap/awesome-practice-projects
+[coveralls-image]: https://img.shields.io/coveralls/app-bootstrap/awesome-practice-projects.svg?style=flat-square
+[coveralls-url]: https://coveralls.io/r/app-bootstrap/awesome-practice-projects?branch=master
 [node-image]: https://img.shields.io/badge/node.js-%3E=8-green.svg?style=flat-square
 [node-url]: http://nodejs.org/download/
 

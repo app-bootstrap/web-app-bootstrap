@@ -3,14 +3,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import {
+  TodoListModel
+} from './store';
+
 import App from './App';
 
-class TodoList {
-  get unfinishedTodoCount() {
-    return this.todos.filter(todo => !todo.finished).length;
-  }
-}
+const store = new TodoListModel();
 
-const store = new TodoList();
-
-ReactDOM.render(<App todoStore={store} />, document.querySelector('#app'));
+ReactDOM.render(<App store={store} />, document.querySelector('#app'));

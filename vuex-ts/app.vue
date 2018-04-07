@@ -46,100 +46,99 @@
 </template>
 
 <script lang="ts">
-  import Vue from 'vue';
-  import Component from 'vue-class-component';
-  
-  @Component({
-    name: 'app',
-    props: {
-      toggleAllChecked: Boolean
+import Vue from 'vue';
+import Component from 'vue-class-component';
+
+@Component({
+  name: 'app',
+  props: {
+    toggleAllChecked: Boolean
+  }
+})
+export default class App extends Vue {
+  toggleAllChecked = false;
+  get type(): string {
+    return this.getHashState();
+  }
+  get getAll(): Todo.Item[] {
+    return this.$store.getters.getAll;
+  }
+  get getActive(): Todo.Item[] {
+    return this.$store.getters.getActive;
+  }
+  get getCompleted(): Todo.Item[] {
+    return this.$store.getters.getCompleted;
+  }
+  get currentList(): Todo.Item[] {
+    switch (this.type) {
+      case 'all':
+        return this.getAll;
+      case 'completed':
+        return this.getCompleted;
+      case 'active':
+        return this.getActive;
     }
-  })
-  export default class App extends Vue {
-    toggleAllChecked = false;
-    get type(): string {
-      return this.getHashState();
-    }
-    get getAll(): Todo.Item[] {
-      return this.$store.getters.getAll;
-    }
-    get getActive(): Todo.Item[] {
-      return this.$store.getters.getActive;
-    }
-    get getCompleted(): Todo.Item[] {
-      return this.$store.getters.getCompleted;
-    }
-    get currentList(): Todo.Item[] {
-      switch (this.type) {
-        case 'all':
-          return this.getAll;
-        case 'completed':
-          return this.getCompleted;
-        case 'active':
-          return this.getActive;
-      }
-      return [];
-    }
-    selectedClass(name: string) {
-      return {
-        selected: this.getHashState() === name
-      };
-    }
-    getHashState(): string {
-      return location.hash.replace('#/', '') || 'all';
-    }
-    onKeyup(e: any) {
-      var value = e.target.value.trim();
-      if (value) {
-        this.$store.commit('add', {
-          content: value
-        });
-        e.target.value = '';
-      }
-    }
-    onItemClick(e: any) {
-      const id = e.target.getAttribute('data-id');
-      this.$store.commit(e.target.checked ? 'complete' : 'uncomplete', {
-        id
+    return [];
+  }
+  selectedClass(name: string) {
+    return {
+      selected: this.getHashState() === name
+    };
+  }
+  getHashState(): string {
+    return location.hash.replace('#/', '') || 'all';
+  }
+  onKeyup(e: any) {
+    var value = e.target.value.trim();
+    if (value) {
+      this.$store.commit('add', {
+        content: value
       });
-    }
-    handleItemContent(e: any) {
-      const id = e.target.getAttribute('data-id');
-      const value = e.target.value.trim();
-      if (value) {
-        this.$store.commit('update', {
-          content: value,
-          id
-        });
-      }
-      this.$store.commit('toggleEditing', {
-        id
-      });
-    }
-    editing(e: any) {
-      const id = e.currentTarget.getAttribute('data-id');
-      this.$store.commit('toggleEditing', {
-        id
-      });
-      const target = e.currentTarget.querySelector('input.edit');
-      setTimeout(() => target.focus(), 0);
-    }
-    destroy(e: any) {
-      const id = e.target.getAttribute('data-id');
-      this.$store.commit('remove', {
-        id
-      });
-    }
-    toggleAll(e: any) {
-      this.$store.commit(e.target.checked ? 'completedAll' : 'uncompletedAll');
-      this.toggleAllChecked = !this.toggleAllChecked;
-    }
-    clearCompleted() {
-      this.$store.commit('clearCompleted');
+      e.target.value = '';
     }
   }
+  onItemClick(e: any) {
+    const id = e.target.getAttribute('data-id');
+    this.$store.commit(e.target.checked ? 'complete' : 'uncomplete', {
+      id
+    });
+  }
+  handleItemContent(e: any) {
+    const id = e.target.getAttribute('data-id');
+    const value = e.target.value.trim();
+    if (value) {
+      this.$store.commit('update', {
+        content: value,
+        id
+      });
+    }
+    this.$store.commit('toggleEditing', {
+      id
+    });
+  }
+  editing(e: any) {
+    const id = e.currentTarget.getAttribute('data-id');
+    this.$store.commit('toggleEditing', {
+      id
+    });
+    const target = e.currentTarget.querySelector('input.edit');
+    setTimeout(() => target.focus(), 0);
+  }
+  destroy(e: any) {
+    const id = e.target.getAttribute('data-id');
+    this.$store.commit('remove', {
+      id
+    });
+  }
+  toggleAll(e: any) {
+    this.$store.commit(e.target.checked ? 'completedAll' : 'uncompletedAll');
+    this.toggleAllChecked = !this.toggleAllChecked;
+  }
+  clearCompleted() {
+    this.$store.commit('clearCompleted');
+  }
+}
 </script>
-
 <style lang="less">
   @import '../assets/base.less';
   @import '../assets/app.less';

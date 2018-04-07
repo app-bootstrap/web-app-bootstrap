@@ -18,24 +18,25 @@ const config = {
   module: {
     loaders: [
       {
-        test: /\.js?/,
-        loader: 'babel-loader',
-        exclude: /node_modules/
-      }, {
         test: /\.jsx?/,
         loader: 'babel-loader',
         exclude: /node_modules/
       }, {
         test: /\.vue$/,
         loader: 'vue-loader',
-        exclude: /node_modules/
-      }, {
-        test: /\.tsx?$/,
-        loader: 'ts-loader',
         exclude: /node_modules/,
         options: {
-          appendTsSuffixTo: [/\.vue$/]
+          esModule: true,
+          loaders: {
+            ts: {
+              loader: 'ts-loader!babel-loader'
+            }
+          }
         }
+      }, {
+        test: /\.ts(x?)$/,
+        loader: 'ts-loader?transpileOnly=true!babel-loader',
+        exclude: /node_modules/
       }, {
         test: /\.json$/,
         loader: 'json-loader',

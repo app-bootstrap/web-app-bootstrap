@@ -7,7 +7,8 @@ const config = {
     vuex: path.resolve('vuex'),
     flux: path.resolve('flux'),
     redux: path.resolve('redux'),
-    mobx: path.resolve('mobx')
+    mobx: path.resolve('mobx'),
+    'vuex-ts': path.resolve('vuex-ts')
   },
   output: {
     path: path.join(__dirname, 'dist'),
@@ -29,6 +30,13 @@ const config = {
         loader: 'vue-loader',
         exclude: /node_modules/
       }, {
+        test: /\.tsx?$/,
+        loader: 'ts-loader',
+        exclude: /node_modules/,
+        options: {
+          appendTsSuffixTo: [/\.vue$/]
+        }
+      }, {
         test: /\.json$/,
         loader: 'json-loader',
         exclude: /node_modules/
@@ -37,6 +45,12 @@ const config = {
         loader: 'style-loader!css-loader!less-loader!postcss-loader'
       }
     ]
+  },
+  resolve: {
+    extensions: ['.ts', '.js', '.vue', '.json'],
+    alias: {
+      'vue$': 'vue/dist/vue.esm.js'
+    }
   }
 };
 

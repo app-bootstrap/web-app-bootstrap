@@ -28,15 +28,32 @@ const config = {
         options: {
           esModule: true,
           loaders: {
-            ts: {
-              loader: 'ts-loader!babel-loader'
-            }
+            ts: [
+              'babel-loader',
+              {
+                loader: 'ts-loader',
+                options: {
+                  appendTsSuffixTo: [/\.vue$/],
+                  configFile: path.resolve(__dirname, 'tsconfig.json')
+                },
+              },
+            ],
           }
         }
       }, {
-        test: /\.ts(x?)$/,
-        loader: 'ts-loader?transpileOnly=true!babel-loader',
-        exclude: /node_modules/
+        test: /\.ts$/,
+        exclude: /node_modules/,
+        use: [
+          'babel-loader',
+          {
+            loader: 'ts-loader',
+            options: {
+              appendTsSuffixTo: [/\.vue$/],
+              configFile: path.resolve(__dirname, 'tsconfig.json')
+            },
+          },
+          'tslint-loader',
+        ],
       }, {
         test: /\.json$/,
         loader: 'json-loader',

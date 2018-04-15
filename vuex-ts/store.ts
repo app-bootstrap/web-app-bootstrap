@@ -12,28 +12,28 @@ const localStore = {
   get() {
     return JSON.parse(localStorage['enough-todo'] || '[]');
   },
-  set(data: Object) {
+  set(data: object) {
     localStorage['enough-todo'] = JSON.stringify(data);
-  }
+  },
 };
 
 const state: Todo.State = {
-  todos: localStore.get()
+  todos: localStore.get(),
 };
 
 const getters: GetterTree<any, any> = {
-  getAll(state) : Todo.Item [] {
+  getAll(state): Todo.Item [] {
     return state.todos.filter((item: Todo.Item) => {
       item.editing = false;
       return item;
     }).reverse();
   },
-  getCompleted(state) : Todo.Item [] {
+  getCompleted(state): Todo.Item [] {
     return state.todos.filter((item: Todo.Item) => item.completed).reverse();
   },
-  getActive(state) : Todo.Item [] {
+  getActive(state): Todo.Item [] {
     return state.todos.filter((item: Todo.Item) => !item.completed).reverse();
-  }
+  },
 };
 
 const mutations: MutationTree<any> = {
@@ -42,7 +42,7 @@ const mutations: MutationTree<any> = {
       id: String(+new Date()),
       completed: false,
       editing: false,
-      ...data
+      ...data,
     });
     localStore.set(state.todos);
   },
@@ -104,8 +104,8 @@ const mutations: MutationTree<any> = {
   clearCompleted(state: Todo.State, data) {
     state.todos = state.todos.filter((item: Todo.Item) => !item.completed);
     localStore.set(state.todos);
-  }
-}
+  },
+};
 
 export default new Vuex.Store({
   state,

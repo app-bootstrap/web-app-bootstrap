@@ -8,7 +8,8 @@ const config = {
     flux: path.resolve('flux'),
     redux: path.resolve('redux'),
     mobx: path.resolve('mobx'),
-    'vuex-ts': path.resolve('vuex-ts')
+    'vuex-ts': path.resolve('vuex-ts'),
+    plain: path.resolve('plain'),
   },
   output: {
     path: path.join(__dirname, 'dist'),

@@ -18,6 +18,18 @@
 
 - [app-bootstrap/todo](//github.com/app-bootstrap/todo)
 
+## Content
+
+```
+├── flux       # flux
+├── redux      # redux
+├── plain      # vue with event-bus
+├── mobx       # mobx
+├── vuex       # vuex
+├── vuex-ts    # vuex & typescript
+└── test       # UI test case
+```
+
 <!-- GITCONTRIBUTOR_START -->
 
 ## Contributors

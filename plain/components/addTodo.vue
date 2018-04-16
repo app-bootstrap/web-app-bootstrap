@@ -17,12 +17,12 @@ export default {
   data () {
     return {
       id: 0,
-      content: '',
-    }
+      content: ''
+    };
   },
   methods: {
     onKeyup() {
-      const id = String(+ new Date());
+      const id = String(+new Date());
       const content = this.content.trim();
       if (content) {
         this.$emit('create-todo', {
@@ -35,5 +35,5 @@ export default {
       }
     }
   }
-}
+};
 </script>

@@ -9,7 +9,7 @@ const config = {
     redux: path.resolve('redux'),
     mobx: path.resolve('mobx'),
     'vuex-ts': path.resolve('vuex-ts'),
-    plain: path.resolve('plain'),
+    plain: path.resolve('plain')
   },
   output: {
     path: path.join(__dirname, 'dist'),
@@ -36,9 +36,9 @@ const config = {
                 options: {
                   appendTsSuffixTo: [/\.vue$/],
                   configFile: path.resolve(__dirname, 'tsconfig.json')
-                },
-              },
-            ],
+                }
+              }
+            ]
           }
         }
       }, {
@@ -51,10 +51,10 @@ const config = {
             options: {
               appendTsSuffixTo: [/\.vue$/],
               configFile: path.resolve(__dirname, 'tsconfig.json')
-            },
+            }
           },
-          'tslint-loader',
-        ],
+          'tslint-loader'
+        ]
       }, {
         test: /\.json$/,
         loader: 'json-loader',

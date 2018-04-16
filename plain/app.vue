@@ -15,7 +15,7 @@
         <label for="toggle-all">Mark all as complete</label>
         <ul id="todo-list">
           <li
-            v-for="item in data"
+            v-for="item in data.reverse()"
             :data-id="item.id"
             :class="[{completed: item.completed, editing: item.editing}]"
            >
@@ -54,8 +54,8 @@
 </template>
 
 <script>
-import addTodo from './components/addTodo'
-import todo from './components/todo'
+import addTodo from './components/addTodo';
+import todo from './components/todo';
 
 const localStore = {
   get() {
@@ -76,14 +76,14 @@ export default {
     this.state = this.getHashState();
     window.onhashchange = () => {
       this.state = this.getHashState();
-    }
+    };
   },
   computed: {
     data () {
       switch (this.state) {
         case 'all':
           return this.getTodos(todo => {
-            todo.editing = false
+            todo.editing = false;
             return todo;
           });
         case 'active':
@@ -101,7 +101,7 @@ export default {
       todos: localStore.get(),
       state: 'all',
       toggleAllChecked: false
-    }
+    };
   },
   methods: {
     getTodos(func) {
@@ -116,7 +116,7 @@ export default {
       return location.hash.replace('#/', '') || 'all';
     },
     onCreate(todo) {
-      this.todos.push(todo)
+      this.todos.push(todo);
       localStore.set(this.todos);
     },
     onDelete(todo) {

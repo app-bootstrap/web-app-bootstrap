@@ -44,5 +44,5 @@ export default {
       this.$emit('oneEditingComplete', this.item);
     }
   }
-}
+};
 </script>

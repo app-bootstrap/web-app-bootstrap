@@ -95,7 +95,6 @@ export default {
     ...mapGetters([
       'getAll',
       'getActive',
-      'getActive',
       'getCompleted'
     ]),
     data: function() {

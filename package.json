@@ -19,8 +19,11 @@
     "build": "cross-env NODE_ENV=production webpack -p",
     "prepublish": "npm run build",
     "serve": "npm run dev:test &",
-    "test": "macaca run -d ./test --reporter macaca-reporter",
-    "test:vuex": "macaca run -d ./test/vuex.test.js --verbose",
+    "test": "npm run test:plain && npm run test:vuex && npm run test:flux && npm run test:mobx && npm run test:vuex-ts --reporter macaca-reporter",
+    "test:vuex": "macaca run -d ./test/vuex/vuex.test.js --verbose",
+    "test:flux": "macaca run -d ./test/flux/flux.test.js --verbose",
+    "test:mobx": "macaca run -d ./test/mobx/mobx.test.js --verbose",
+    "test:vuex-ts": "macaca run -d ./test/vuex-ts/vuex-ts.test.js --verbose",
     "test:plain": "mocha-webpack --webpack-config webpack.config.js --require test/setup.js test/plain/components/*.test.js test/plain/app.test.js",
     "ci": "npm run lint && npm run serve && npm run test",
     "contributor": "git-contributor"

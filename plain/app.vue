@@ -15,7 +15,7 @@
         <label for="toggle-all">Mark all as complete</label>
         <ul id="todo-list">
           <li
-            v-for="item in data.reverse()"
+            v-for="item in data"
             :data-id="item.id"
             :class="[{completed: item.completed, editing: item.editing}]"
            >
@@ -59,10 +59,10 @@ import todo from './components/todo';
 
 const localStore = {
   get() {
-    return JSON.parse(localStorage['enough-todo'] || '[]');
+    return JSON.parse(window.localStorage['enough-todo'] || '[]');
   },
   set(data) {
-    localStorage['enough-todo'] = JSON.stringify(data);
+    window.localStorage['enough-todo'] = JSON.stringify(data);
   }
 };
 
@@ -105,7 +105,7 @@ export default {
   },
   methods: {
     getTodos(func) {
-      return this.todos.filter(func);
+      return this.todos.filter(func).reverse();
     },
     selectedClass(name) {
       return {

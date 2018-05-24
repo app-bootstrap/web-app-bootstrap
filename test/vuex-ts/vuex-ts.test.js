@@ -39,13 +39,16 @@ describe('test/vuex-ts.test.js', () => {
 
     it('setValue vs formatInput', () => {
       return driver
-        .formatInput('#new-todo', `input by formatInput ${Date.now()}`)
-        .keyboardEvent('#new-todo', 'keyUp', 13)
+        .elementByCss('#new-todo')
+        .formatInput(`input by formatInput ${Date.now()}`)
+        .elementByCss('#new-todo')
+        .keyboardEvent('keyUp', 13)
         .sleep(3000)
         .elementByCss('#new-todo')
         .clear()
         .sendKeys(`input by sendKeys ${Date.now()}`)
-        .keyboardEvent('#new-todo', 'keyUp', 13)
+        .elementByCss('#new-todo')
+        .keyboardEvent('keyUp', 13)
         .sleep(3000);
     });
   });

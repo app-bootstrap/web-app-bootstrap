@@ -40,6 +40,10 @@ describe('test/vuex.test.js', () => {
     it('setValue vs formatInput', () => {
       return driver
         .elementByCss('#new-todo')
+        .elementTouch({
+          type: 'start'
+        })
+        .elementByCss('#new-todo')
         .formatInput(`input by formatInput ${Date.now()}`)
         .elementByCss('#new-todo')
         .keyboardEvent('keyUp', 13)

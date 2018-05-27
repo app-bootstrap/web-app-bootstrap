@@ -9,7 +9,7 @@ const {
   BASE_URL
 } = webpackHelper;
 
-describe('test/vuex.test.js', () => {
+describe('test/plain.test.js', () => {
   describe('page func testing', () => {
     before(() => {
       return driver
@@ -22,7 +22,7 @@ describe('test/vuex.test.js', () => {
 
     beforeEach(() => {
       return driver
-        .getUrl(`${BASE_URL}/vuex`);
+        .getUrl(`${BASE_URL}/plain`);
     });
 
     afterEach(function () {

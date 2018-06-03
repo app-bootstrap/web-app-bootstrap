@@ -1,6 +1,7 @@
 'use strict';
 
 const path = require('path');
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 const config = {
   entry: {
@@ -17,7 +18,7 @@ const config = {
     filename: '[name].js'
   },
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.jsx?/,
         loader: 'babel-loader',
@@ -58,10 +59,25 @@ const config = {
       }, {
         test: /\.json$/,
         loader: 'json-loader',
+        type: 'javascript/auto',
         exclude: /node_modules/
-      }, {
+      },
+      {
         test: /\.less$/,
-        loader: 'style-loader!css-loader!less-loader!postcss-loader'
+        use: [
+          {
+            loader: 'style-loader'
+          },
+          {
+            loader: 'css-loader'
+          },
+          {
+            loader: 'less-loader'
+          },
+          {
+            loader: 'postcss-loader'
+          }
+        ]
       }
     ]
   },
@@ -70,7 +86,10 @@ const config = {
     alias: {
       'vue$': 'vue/dist/vue.esm.js'
     }
-  }
+  },
+  plugins: [
+    new VueLoaderPlugin()
+  ]
 };
 
 module.exports = config;

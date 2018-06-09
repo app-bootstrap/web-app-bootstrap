@@ -20,7 +20,9 @@
     "prepublish": "npm run build",
     "serve": "npm run dev:test &",
     "test": "macaca run -d ./test --verbose",
-    "ci": "npm run lint && npm run serve && npm run test",
+    "ci:travis": "npm run lint && npm run serve && npm run test",
+    "ci": "./ci.sh",
+    "marmot": "marmot report -c ./marmot.config.js",
     "contributor": "git-contributor"
   },
   "precommit": [
@@ -62,6 +64,7 @@
     "macaca-electron": "2",
     "macaca-wd": "^1.1.1",
     "marked": "^0.3.4",
+    "marmot-cli": "^1.0.3",
     "mobx": "^3.4.1",
     "mobx-react": "^4.3.5",
     "mocha-webpack": "^1.1.0",

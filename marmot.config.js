@@ -2,7 +2,7 @@
 
 const {
   webUtils
-} = require('marmot-cli/helper');
+} = require('marmot-cli/lib/helper');
 
 const testResult = require('./reports/json-final');
 const coverageResult = require('./coverage/coverage-final');

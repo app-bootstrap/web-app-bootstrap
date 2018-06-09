@@ -17,11 +17,6 @@ const {
   passes,
   passPercent
 } = testResult.stats;
-const {
-  tests,
-  passes,
-  passPercent
-} = testResult.stats;
 
 const res = {
   files: [

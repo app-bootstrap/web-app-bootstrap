@@ -1,7 +1,8 @@
 'use strict';
 
 const {
-  webUtils
+  webUtils,
+  getDepsPkgVersion,
 } = require('marmot-cli/lib/helper');
 
 const testResult = require('./reports/json-final');
@@ -35,9 +36,9 @@ const res = {
     coverageHtmlReporterPath: 'coverage/index.html'
   },
   extraInfo: {
-    'marmot-cli': require.resolve('marmot-cli').match(/\d+.\d+.\d+/)[0],
-    'macaca-wd': require.resolve('macaca-wd').match(/\d+.\d+.\d+/)[0],
-    'vue-version': require.resolve('macaca-wd').match(/\d+.\d+.\d+/)[0]
+    'marmot-cli': getDepsPkgVersion('marmot-cli'),
+    'macaca-wd': getDepsPkgVersion('macaca-wd'),
+    'vue': getDepsPkgVersion('vue')
   }
 };
 

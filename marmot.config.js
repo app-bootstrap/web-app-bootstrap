@@ -23,7 +23,8 @@ const res = {
   files: [
     'coverage',
     'reports',
-    'screenshots'
+    'screenshots',
+    'dist',
   ],
   packages: [
   ],

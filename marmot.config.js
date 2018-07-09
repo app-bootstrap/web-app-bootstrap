@@ -7,6 +7,7 @@ const {
 
 const testResult = require('./reports/json-final');
 const coverageResult = require('./coverage/coverage-final');
+
 const {
   lines
 //  statements,
@@ -25,6 +26,7 @@ const res = {
     'reports',
     'screenshots',
     'dist',
+    'index.html'
   ],
   packages: [
   ],

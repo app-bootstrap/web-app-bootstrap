@@ -1,0 +1,46 @@
+.App {
+  text-align: center;
+}
+
+.hide {
+  display: none !important;
+}
+
+.login,
+.home,
+.personal {
+  padding: 0 16px;
+}
+
+.personal img {
+  margin: 10%;
+  width: 120px;
+  border-radius: 100%;
+}
+
+.page {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+}
+
+.page .am-tab-bar {
+  height: calc(100vh - 45px);
+}
+
+.page iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.page h1 {
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.am-button {
+  color: #fff !important;
+  background-color: #54b9d1 !important;
+}

@@ -10,7 +10,8 @@ const config = {
     redux: path.resolve('redux'),
     mobx: path.resolve('mobx'),
     'vuex-ts': path.resolve('vuex-ts'),
-    plain: path.resolve('plain')
+    plain: path.resolve('plain'),
+    'app-bootstrap': path.resolve('app-bootstrap')
   },
   output: {
     path: path.join(__dirname, 'dist'),
@@ -76,6 +77,17 @@ const config = {
           },
           {
             loader: 'postcss-loader'
+          }
+        ]
+      },
+      {
+        test: /\.css$/,
+        use: [
+          {
+            loader: 'style-loader'
+          },
+          {
+            loader: 'css-loader'
           }
         ]
       }

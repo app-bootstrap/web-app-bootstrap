@@ -1,0 +1,30 @@
+[
+  {
+    "identifer": "awesome",
+    "pathname": "foo",
+    "description": "bar",
+    "method": "ALL",
+    "currentScene": "default",
+    "proxyContent": "{}",
+    "params": "{}",
+    "reqSchemaContent": "{}",
+    "resSchemaContent": "{}",
+    "responseHeader": "{}",
+    "scenes": "[]",
+    "delay": "0"
+  },
+  {
+    "identifer": "awesome",
+    "pathname": "addTodos",
+    "description": "adding todo",
+    "method": "POST",
+    "currentScene": "default",
+    "proxyContent": "{}",
+    "params": "{}",
+    "reqSchemaContent": "{}",
+    "resSchemaContent": "{}",
+    "responseHeader": "{}",
+    "scenes": "[{\"name\":\"default\",\"data\":{\"success\":true}}]",
+    "delay": "0"
+  }
+]

@@ -2,6 +2,24 @@
 
 const path = require('path');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
+const DataHub = require('macaca-datahub');
+const datahubMiddleware = require('datahub-proxy-middleware');
+
+const datahubConfig = {
+  port: 5678,
+  hostname: '127.0.0.1',
+  store: path.join(__dirname, 'data'),
+  proxy: {
+    '^/api': {
+      hub: 'awesome',
+    },
+  },
+  showBoard: false,
+};
+
+const defaultDatahub = new DataHub({
+  port: datahubConfig.port,
+});
 
 const config = {
   entry: {
@@ -101,7 +119,16 @@ const config = {
   },
   plugins: [
     new VueLoaderPlugin()
-  ]
+  ],
+  devServer: {
+    before: app => {
+      datahubMiddleware(app)(datahubConfig);
+    },
+    after: () => {
+      defaultDatahub.startServer(datahubConfig).then(() => {
+      });
+    }
+  }
 };
 
 module.exports = config;

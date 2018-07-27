@@ -56,6 +56,10 @@
 <script>
 import addTodo from './components/addTodo';
 import todo from './components/todo';
+import {
+  postTodo
+} from '../service/todo'
+import 'whatwg-fetch'
 
 const localStore = {
   get() {
@@ -116,8 +120,10 @@ export default {
       return location.hash.replace('#/', '') || 'all';
     },
     onCreate(todo) {
-      this.todos.push(todo);
-      localStore.set(this.todos);
+      postTodo(todo.content).then(res => {
+        this.todos.push(todo);
+        localStore.set(this.todos);
+      })
     },
     onDelete(todo) {
       this.todos = this.todos.filter(item => item.id !== todo.id);

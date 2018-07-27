@@ -57,7 +57,10 @@
 import addTodo from './components/addTodo';
 import todo from './components/todo';
 import {
-  postTodo
+  postTodo,
+  deleteTodo,
+  completeTodos,
+  editingTodos,
 } from '../service/todo'
 import 'whatwg-fetch'
 
@@ -126,22 +129,28 @@ export default {
       })
     },
     onDelete(todo) {
-      this.todos = this.todos.filter(item => item.id !== todo.id);
-      localStore.set(this.todos);
+      deleteTodo(todo.id).then(() => {
+        this.todos = this.todos.filter(item => item.id !== todo.id);
+        localStore.set(this.todos);
+      })
     },
     onComplete(todo) {
-      const todoIndex = this.todos.indexOf(todo);
-      this.todos[todoIndex].completed = todo.completed;
-      localStore.set(this.todos);
+      completeTodos(todo.id).then(() => {
+        const todoIndex = this.todos.indexOf(todo);
+        this.todos[todoIndex].completed = todo.completed;
+        localStore.set(this.todos);
+      })
     },
     onEditing(todo) {
       const todoIndex = this.todos.indexOf(todo);
       this.todos[todoIndex].editing = todo.editing;
     },
     onEditingComplete(todo) {
-      const todoIndex = this.todos.indexOf(todo);
-      this.todos[todoIndex].content = todo.content;
-      localStore.set(this.todos);
+      editingTodos(todo.id).then(() => {
+        const todoIndex = this.todos.indexOf(todo);
+        this.todos[todoIndex].content = todo.content;
+        localStore.set(this.todos);
+      })
     },
     toggleAll(e) {
       this.todos.forEach(todo => {

@@ -1,0 +1,13 @@
+{
+  "protocol": "http",
+  "pathname": "addTodos",
+  "method": "POST",
+  "projectUniqId": "85475c30-a506-463a-aeab-5a9651185022",
+  "description": "adding todo",
+  "currentScene": "default",
+  "proxyConfig": {
+    "proxyList": []
+  },
+  "contextConfig": {},
+  "uniqId": "ba5473bb-11f9-43b7-8f9a-2d634e35d146"
+}

@@ -41,6 +41,7 @@
     "classnames": "^2.2.5",
     "cross-env": "^5.1.1",
     "css-loader": "^0.28.8",
+    "datahub-proxy-middleware": "^1.0.9",
     "eslint": "^4.10.0",
     "eslint-config-standard": "^11.0.0-beta.0",
     "eslint-loader": "^2.0.0",
@@ -60,6 +61,7 @@
     "less": "^2.7.3",
     "less-loader": "^4.0.5",
     "macaca-cli": "2",
+    "macaca-datahub": "2",
     "macaca-electron": "2",
     "macaca-wd": "2",
     "marked": "^0.3.4",
@@ -90,5 +92,8 @@
     "webpack-dev-server": "^3.1.4",
     "xutil": "1"
   },
-  "licenses": "MIT"
+  "licenses": "MIT",
+  "dependencies": {
+    "whatwg-fetch": "^2.0.4"
+  }
 }

@@ -1,0 +1,13 @@
+{
+  "protocol": "http",
+  "pathname": "completedTodos",
+  "method": "PUT",
+  "projectUniqId": "85475c30-a506-463a-aeab-5a9651185022",
+  "description": "completed todo",
+  "currentScene": "default",
+  "proxyConfig": {
+    "proxyList": []
+  },
+  "contextConfig": {},
+  "uniqId": "fde3123e-cf51-44ef-b5d2-5536b74d26cc"
+}

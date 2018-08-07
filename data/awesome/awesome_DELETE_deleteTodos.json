@@ -1,0 +1,13 @@
+{
+  "protocol": "http",
+  "pathname": "deleteTodos",
+  "method": "DELETE",
+  "projectUniqId": "85475c30-a506-463a-aeab-5a9651185022",
+  "description": "deleting todos",
+  "currentScene": "default",
+  "proxyConfig": {
+    "proxyList": []
+  },
+  "contextConfig": {},
+  "uniqId": "b01577ff-22e1-436a-8b9f-f38af712ed87"
+}

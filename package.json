@@ -1,7 +1,7 @@
 {
   "name": "web-app-bootstrap",
   "version": "1.0.4",
-  "description": "data flow sample",
+  "description": "f2e state management sample",
   "keywords": [
     "data",
     "framework",
@@ -20,7 +20,6 @@
     "prepublish": "npm run build",
     "serve": "npm run dev:test &",
     "test": "macaca run -d ./test --verbose",
-    "ci:travis": "npm run lint && npm run serve && npm run test",
     "ci": "./ci.sh",
     "marmot": "marmot report -c ./marmot.config.js",
     "contributor": "git-contributor"
@@ -82,6 +81,7 @@
     "tslint": "^5.9.1",
     "tslint-loader": "^3.6.0",
     "typescript": "^2.8.1",
+    "unstated": "^2.1.1",
     "vue": "^2.5.13",
     "vue-class-component": "^6.2.0",
     "vue-loader": "^15.2.1",

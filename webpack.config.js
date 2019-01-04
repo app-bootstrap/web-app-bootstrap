@@ -29,6 +29,7 @@ const config = {
     mobx: path.resolve('mobx'),
     'vuex-ts': path.resolve('vuex-ts'),
     plain: path.resolve('plain'),
+    unstated: path.resolve('unstated'),
     'app-bootstrap': path.resolve('app-bootstrap')
   },
   output: {

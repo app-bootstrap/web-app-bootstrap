@@ -3,7 +3,7 @@
 const {
   webUtils,
   getDepsPkgVersion,
-} = require('marmot-cli/lib/helper');
+} = require('reliable-cli/lib/helper');
 
 const testResult = require('./reports/json-final');
 const coverageResult = require('./coverage/coverage-final');
@@ -39,7 +39,7 @@ const res = {
     coverageHtmlReporterPath: 'coverage/index.html'
   },
   extraInfo: {
-    'marmot-cli': getDepsPkgVersion('marmot-cli'),
+    'reilable-cli': getDepsPkgVersion('reilable-cli'),
     'macaca-wd': getDepsPkgVersion('macaca-wd'),
     'vue': getDepsPkgVersion('vue')
   }

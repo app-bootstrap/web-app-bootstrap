@@ -9,6 +9,7 @@ import 'antd/dist/antd.css';
 import './app.less';
 
 import fetch from './common/fetch';
+import Login from './login.jsx';
 
 import {
   Layout,
@@ -22,14 +23,9 @@ import {
 const columns = [{
   title: 'Name',
   dataIndex: 'name',
-  // specify the condition of filtering result
-  // here is that finding the name started with `value`
-  onFilter: (value, record) => record.name.indexOf(value) === 0,
-  sorter: (a, b) => a.name.length - b.name.length,
 }, {
   title: 'Age',
   dataIndex: 'age',
-  defaultSortOrder: 'descend',
   sorter: (a, b) => a.age - b.age,
 }, {
   title: 'Address',
@@ -41,14 +37,7 @@ const columns = [{
     text: 'New York',
     value: 'New York',
   }],
-  filterMultiple: false,
-  onFilter: (value, record) => record.address.indexOf(value) === 0,
-  sorter: (a, b) => a.address.length - b.address.length,
 }];
-
-function onChange (pagination, filters, sorter) {
-  console.log('params', pagination, filters, sorter);
-}
 
 const Header = Layout.Header;
 const Footer = Layout.Footer;
@@ -56,12 +45,15 @@ const Content = Layout.Content;
 
 const Option = Select.Option;
 
+const isLogin = location.hash === '#login';
+
 class App extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
       loading: true,
       dataList: [],
+      buttonText: 'button',
     };
   }
 
@@ -89,23 +81,36 @@ class App extends React.Component {
     });
   }
 
+  onSelectChange(e) {
+    this.setState({
+      buttonText: e,
+    });
+  }
+
   render () {
+    if (isLogin) {
+      return <Login />;
+    }
     return (
       <Layout>
         <Header className="header"></Header>
         <Content style={{ padding: 30 }}>
-          <Select className="test-list" defaultValue="lucy" style={{ width: 120 }}>
+          <Select
+            className="test-list"
+            defaultValue="lucy"
+            onChange={this.onSelectChange.bind(this)}
+          >
             <Option value="jack">Jack</Option>
             <Option value="lucy">Lucy</Option>
             <Option value="disabled" disabled>Disabled</Option>
             <Option value="fourth">fourth</Option>
           </Select>
-          <Button onClick={this.doNotification.bind(this)}>A Button</Button>
+          <Button onClick={this.doNotification.bind(this)}>{this.state.buttonText}</Button>
           <Spin
             tip="Loading..."
             spinning={this.state.loading}
           >
-            <Table columns={columns} dataSource={this.state.dataList} onChange={onChange} />
+            <Table columns={columns} dataSource={this.state.dataList} />
           </Spin>
         </Content>
         <Footer/>

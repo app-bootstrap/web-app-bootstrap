@@ -10,7 +10,6 @@ import 'antd-mobile/dist/antd-mobile.css';
 import * as CONSTANTS from '../constants';
 
 class LoginPage extends Component {
-
   render() {
     return (
       <div className={classnames({
@@ -22,8 +21,8 @@ class LoginPage extends Component {
             marginTop: '20%'
           }}>{CONSTANTS.TITLE}</h1>
           <div style={{
-              marginTop: '30px'
-            }}
+            marginTop: '30px'
+          }}
           >
             <InputItem
               autoFocus
@@ -32,8 +31,8 @@ class LoginPage extends Component {
             />
           </div>
           <div style={{
-              marginTop: '10px'
-            }}
+            marginTop: '10px'
+          }}
           >
             <InputItem
               clear

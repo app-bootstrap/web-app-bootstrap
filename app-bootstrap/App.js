@@ -82,10 +82,10 @@ class App extends Component {
             >
               <div className="home">
                 <h1 style={{
-                   marginTop: '10%'
+                  marginTop: '10%'
                 }}>{CONSTANTS.TITLE}</h1>
                 <Button style={{
-                   marginTop: '70%'
+                  marginTop: '70%'
                 }} onClick={this.logoutHandle.bind(this)}>
                   List
                 </Button>
@@ -94,9 +94,9 @@ class App extends Component {
             <TabBar.Item
               icon={
                 <div style={{
-                width: '22px',
-                height: '22px',
-                background: `url(./img/tab_web_btn@2x.png) center center /  54px 42px no-repeat` }}
+                  width: '22px',
+                  height: '22px',
+                  background: `url(./img/tab_web_btn@2x.png) center center /  54px 42px no-repeat` }}
                 />
               }
               selectedIcon={
@@ -114,7 +114,7 @@ class App extends Component {
                   selectedTab: 'Webview'
                 });
               }}
-              >
+            >
               webview
             </TabBar.Item>
             <TabBar.Item
@@ -172,7 +172,7 @@ class App extends Component {
                 <h1>{CONSTANTS.TITLE}</h1>
                 <img alt={CONSTANTS.TITLE} src={`./img/avatar.png`} />
                 <Button style={{
-                   marginTop: '70%'
+                  marginTop: '70%'
                 }} onClick={this.logoutHandle.bind(this)}>Logout</Button>
               </div>
             </TabBar.Item>

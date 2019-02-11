@@ -1,8 +1,8 @@
-import 'whatwg-fetch'
+import 'whatwg-fetch';
 
 const headers = {
   'Content-Type': 'application/json'
-}
+};
 
 const postTodo = (todo) => {
   return new Promise((resolve, reject) => {
@@ -13,14 +13,14 @@ const postTodo = (todo) => {
         todo: todo,
       })
     }).then((response) => {
-      return response.json()
+      return response.json();
     }).then(json => {
-      resolve(json)
+      resolve(json);
     }).catch((error) => {
-      reject(error)
-    })
-  })
-}
+      reject(error);
+    });
+  });
+};
 
 const deleteTodo = (id) => {
   return new Promise((resolve, reject) => {
@@ -31,14 +31,14 @@ const deleteTodo = (id) => {
         id,
       })
     }).then((response) => {
-      return response.json()
+      return response.json();
     }).then(json => {
-      resolve(json)
+      resolve(json);
     }).catch((error) => {
-      reject(error)
-    })
-  })
-}
+      reject(error);
+    });
+  });
+};
 
 const completeTodos = (id) => {
   return new Promise((resolve, reject) => {
@@ -49,14 +49,14 @@ const completeTodos = (id) => {
         id,
       })
     }).then((response) => {
-      return response.json()
+      return response.json();
     }).then(json => {
-      resolve(json)
+      resolve(json);
     }).catch((error) => {
-      reject(error)
-    })
-  })
-}
+      reject(error);
+    });
+  });
+};
 
 const editingTodos = (id) => {
   return new Promise((resolve, reject) => {
@@ -67,18 +67,18 @@ const editingTodos = (id) => {
         id,
       })
     }).then((response) => {
-      return response.json()
+      return response.json();
     }).then(json => {
-      resolve(json)
+      resolve(json);
     }).catch((error) => {
-      reject(error)
-    })
-  })
-}
+      reject(error);
+    });
+  });
+};
 
 export {
   postTodo,
   deleteTodo,
   completeTodos,
   editingTodos,
-}
+};

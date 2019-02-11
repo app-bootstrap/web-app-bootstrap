@@ -95,7 +95,6 @@ class TodoContainer extends Container {
     });
   }
 
-
   clearCompleted() {
     var todos = this.state.todos.filter(item => !item.completed);
     localStore.set(todos);

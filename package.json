@@ -19,15 +19,13 @@
     "build": "cross-env NODE_ENV=production webpack -p",
     "prepublish": "npm run build",
     "serve": "npm run dev:test &",
-    "test": "macaca run -d ./test --verbose",
-    "test:antd": "macaca run -d ./test/antd-sample --verbose",
+    "test": "npm run clean:coverage && macaca run -d ./test --verbose",
+    "test:antd": "npm run clean:coverage && macaca run -d ./test/antd-sample --coverage-ignore \"antd-sample/common\" --verbose",
+    "clean:coverage": "rm -rf coverage",
     "ci": "./ci.sh",
     "reliable": "reliable report -c ./macaca-reliable.config.js",
     "contributor": "git-contributor"
   },
-  "precommit": [
-    "lint"
-  ],
   "devDependencies": {
     "antd": "^3.13.2",
     "antd-mobile": "^2.1.8",
@@ -55,6 +53,7 @@
     "eslint-plugin-vue-libs": "^2.1.0",
     "flux": "^3.1.3",
     "git-contributor": "1",
+    "husky": "^1.3.1",
     "immutable": "^3.8.2",
     "intl": "^1.2.5",
     "jsdom": "^11.8.0",
@@ -95,6 +94,11 @@
     "webpack-dev-server": "^3.1.4",
     "whatwg-fetch": "^2.0.4",
     "xutil": "1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint"
+    }
   },
   "licenses": "MIT"
 }

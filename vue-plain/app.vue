@@ -61,8 +61,8 @@ import {
   deleteTodo,
   completeTodos,
   editingTodos,
-} from '../service/todo'
-import 'whatwg-fetch'
+} from '../service/todo';
+import 'whatwg-fetch';
 
 const localStore = {
   get() {
@@ -126,20 +126,20 @@ export default {
       postTodo(todo.content).then(res => {
         this.todos.push(todo);
         localStore.set(this.todos);
-      })
+      });
     },
     onDelete(todo) {
       deleteTodo(todo.id).then(() => {
         this.todos = this.todos.filter(item => item.id !== todo.id);
         localStore.set(this.todos);
-      })
+      });
     },
     onComplete(todo) {
       completeTodos(todo.id).then(() => {
         const todoIndex = this.todos.indexOf(todo);
         this.todos[todoIndex].completed = todo.completed;
         localStore.set(this.todos);
-      })
+      });
     },
     onEditing(todo) {
       const todoIndex = this.todos.indexOf(todo);
@@ -150,7 +150,7 @@ export default {
         const todoIndex = this.todos.indexOf(todo);
         this.todos[todoIndex].content = todo.content;
         localStore.set(this.todos);
-      })
+      });
     },
     toggleAll(e) {
       this.todos.forEach(todo => {

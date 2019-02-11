@@ -16,9 +16,21 @@
 [node-image]: https://img.shields.io/badge/node.js-%3E=8-green.svg?style=flat-square
 [node-url]: http://nodejs.org/download/
 
+<!-- GITCONTRIBUTOR_START -->
+
+## Contributors
+
+|[<img src="https://avatars1.githubusercontent.com/u/1011681?v=4" width="100px;"/><br/><sub><b>xudafeng</b></sub>](https://github.com/xudafeng)<br/>|[<img src="https://avatars3.githubusercontent.com/u/3807955?v=4" width="100px;"/><br/><sub><b>BernardTolosajr</b></sub>](https://github.com/BernardTolosajr)<br/>
+| :---: | :---: |
+
+
+This project follows the git-contributor [spec](https://github.com/xudafeng/git-contributor), auto upated at `Mon Apr 16 2018 21:51:43 GMT+0800`.
+
+<!-- GITCONTRIBUTOR_END -->
+
 - [app-bootstrap/todo](//github.com/app-bootstrap/todo)
 
-## Content
+## Include
 
 ```
 ├── flux             # flux
@@ -28,9 +40,11 @@
 ├── vuex             # vuex
 ├── vuex-ts          # vuex & typescript
 ├── unstated         # unstated
-├── app-bootstrap    # app-boostrap by Antd mobile
+├── app-bootstrap    # app-boostrap based on Antd mobile
+├── antd-sample    # sample based on Antd
 └── test             # UI test case
 ```
+
 ## Build Setup
 
 ```bash
@@ -56,14 +70,3 @@ npm test
 npm run test:plain
 ```
 
-<!-- GITCONTRIBUTOR_START -->
-
-## Contributors
-
-|[<img src="https://avatars1.githubusercontent.com/u/1011681?v=4" width="100px;"/><br/><sub><b>xudafeng</b></sub>](https://github.com/xudafeng)<br/>|[<img src="https://avatars3.githubusercontent.com/u/3807955?v=4" width="100px;"/><br/><sub><b>BernardTolosajr</b></sub>](https://github.com/BernardTolosajr)<br/>
-| :---: | :---: |
-
-
-This project follows the git-contributor [spec](https://github.com/xudafeng/git-contributor), auto upated at `Mon Apr 16 2018 21:51:43 GMT+0800`.
-
-<!-- GITCONTRIBUTOR_END -->

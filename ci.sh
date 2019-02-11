@@ -8,4 +8,4 @@ npm i
 
 npm run ci:travis
 
-npm run marmot
+npm run reliable

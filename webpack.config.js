@@ -30,7 +30,8 @@ const config = {
     'vuex-ts': path.resolve('vuex-ts'),
     'vue-plain': path.resolve('vue-plain'),
     unstated: path.resolve('unstated'),
-    'app-bootstrap': path.resolve('app-bootstrap')
+    'app-bootstrap': path.resolve('app-bootstrap'),
+    'antd-sample': path.resolve('antd-sample', 'app.jsx'),
   },
   output: {
     path: path.join(__dirname, 'dist'),
@@ -81,8 +82,7 @@ const config = {
         loader: 'json-loader',
         type: 'javascript/auto',
         exclude: /node_modules/
-      },
-      {
+      }, {
         test: /\.less$/,
         use: [
           {
@@ -98,8 +98,7 @@ const config = {
             loader: 'postcss-loader'
           }
         ]
-      },
-      {
+      }, {
         test: /\.css$/,
         use: [
           {
@@ -126,8 +125,8 @@ const config = {
       datahubMiddleware(app)(datahubConfig);
     },
     after: () => {
-      defaultDatahub.startServer(datahubConfig).then(() => {
-      });
+      defaultDatahub.startServer(datahubConfig)
+        .then(() => {});
     }
   }
 };

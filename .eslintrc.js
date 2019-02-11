@@ -24,7 +24,9 @@ module.exports = {
     "react/no-direct-mutation-state": 2,
     "react/no-unknown-property": 1,
     "react/prefer-es6-class": 1,
-    "react/react-in-jsx-scope": 2
+    "react/react-in-jsx-scope": 2,
+    "comma-dangle": 0,
+    "jsx-quotes": 0,
   },
   "env": {
     "es6": true,

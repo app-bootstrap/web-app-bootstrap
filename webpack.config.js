@@ -10,6 +10,9 @@ const datahubConfig = {
   hostname: '127.0.0.1',
   store: path.join(__dirname, 'data'),
   proxy: {
+    '^/api/antd-sample': {
+      hub: 'antd-sample',
+    },
     '^/api': {
       hub: 'awesome',
     },

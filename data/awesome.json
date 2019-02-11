@@ -1,5 +1,6 @@
 {
   "projectName": "awesome",
   "description": "sample description",
+  "globalProxy": null,
   "uniqId": "85475c30-a506-463a-aeab-5a9651185022"
 }

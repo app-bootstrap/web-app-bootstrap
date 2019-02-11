@@ -20,6 +20,7 @@
     "prepublish": "npm run build",
     "serve": "npm run dev:test &",
     "test": "macaca run -d ./test --verbose",
+    "test:antd": "macaca run -d ./test/antd-sample --verbose",
     "ci": "./ci.sh",
     "reliable": "reliable report -c ./macaca-reliable.config.js",
     "contributor": "git-contributor"
@@ -41,7 +42,7 @@
     "classnames": "^2.2.5",
     "cross-env": "^5.1.1",
     "css-loader": "^0.28.8",
-    "datahub-proxy-middleware": "^1.0.9",
+    "datahub-proxy-middleware": "^2.0.2",
     "eslint": "^4.10.0",
     "eslint-config-standard": "^11.0.0-beta.0",
     "eslint-loader": "^2.0.0",
@@ -92,10 +93,8 @@
     "webpack": "^4.10.0",
     "webpack-cli": "^3.0.1",
     "webpack-dev-server": "^3.1.4",
+    "whatwg-fetch": "^2.0.4",
     "xutil": "1"
   },
-  "licenses": "MIT",
-  "dependencies": {
-    "whatwg-fetch": "^2.0.4"
-  }
+  "licenses": "MIT"
 }

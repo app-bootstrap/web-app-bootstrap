@@ -1,0 +1,9 @@
+{
+  "sceneName": "error",
+  "data": {
+    "success": false,
+    "errorMessage": "error message from datahub"
+  },
+  "interfaceUniqId": "debf0525-6188-483d-8ff8-ac62b5f6da8e",
+  "uniqId": "f922a5a6-e53f-4605-8f7c-6915fc306215"
+}

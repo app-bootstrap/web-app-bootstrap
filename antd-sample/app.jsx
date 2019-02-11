@@ -6,6 +6,8 @@ import ReactDom from 'react-dom';
 
 import 'antd/dist/antd.css';
 
+import './app.less';
+
 import fetch from './common/fetch';
 
 import {
@@ -48,8 +50,6 @@ function onChange (pagination, filters, sorter) {
   console.log('params', pagination, filters, sorter);
 }
 
-import './app.less';
-
 const Header = Layout.Header;
 const Footer = Layout.Footer;
 const Content = Layout.Content;
@@ -66,8 +66,7 @@ class App extends React.Component {
   }
 
   componentWillMount () {
-    return;
-    fetch('/api/getListData', 'GET', null)
+    fetch('/api/antd-sample/getListData', 'GET', null)
       .then(res => {
         if (res.success) {
           this.setState({
@@ -94,7 +93,7 @@ class App extends React.Component {
     return (
       <Layout>
         <Header className="header"></Header>
-        <Content style={{padding: 30}}>
+        <Content style={{ padding: 30 }}>
           <Select className="test-list" defaultValue="lucy" style={{ width: 120 }}>
             <Option value="jack">Jack</Option>
             <Option value="lucy">Lucy</Option>

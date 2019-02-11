@@ -41,7 +41,7 @@ const res = {
   extraInfo: {
     'reilable-cli': getDepsPkgVersion('reilable-cli'),
     'macaca-wd': getDepsPkgVersion('macaca-wd'),
-    'vue': getDepsPkgVersion('vue')
+    'vue': getDepsPkgVersion('vue'),
   }
 };
 

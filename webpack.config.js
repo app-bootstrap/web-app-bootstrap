@@ -28,7 +28,7 @@ const config = {
     redux: path.resolve('redux'),
     mobx: path.resolve('mobx'),
     'vuex-ts': path.resolve('vuex-ts'),
-    plain: path.resolve('plain'),
+    'vue-plain': path.resolve('vue-plain'),
     unstated: path.resolve('unstated'),
     'app-bootstrap': path.resolve('app-bootstrap')
   },

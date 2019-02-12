@@ -20,15 +20,27 @@
 
 ## Contributors
 
-|[<img src="https://avatars1.githubusercontent.com/u/1011681?v=4" width="100px;"/><br/><sub><b>xudafeng</b></sub>](https://github.com/xudafeng)<br/>|[<img src="https://avatars3.githubusercontent.com/u/3807955?v=4" width="100px;"/><br/><sub><b>BernardTolosajr</b></sub>](https://github.com/BernardTolosajr)<br/>
+|[<img src="https://avatars1.githubusercontent.com/u/1011681?v=4" width="100px;"/><br/><sub><b>xudafeng</b></sub>](https://github.com/xudafeng)<br/>|[<img src="https://avatars3.githubusercontent.com/u/3807955?v=4" width="100px;"/><br/><sub><b>BernardTolosajr</b></sub>](https://github.com/BernardTolosajr)<br/>|
 | :---: | :---: |
 
 
-This project follows the git-contributor [spec](https://github.com/xudafeng/git-contributor), auto upated at `Mon Apr 16 2018 21:51:43 GMT+0800`.
+This project follows the git-contributor [spec](https://github.com/xudafeng/git-contributor), auto updated at `Tue Feb 12 2019 10:59:00 GMT+0800`.
 
 <!-- GITCONTRIBUTOR_END -->
 
 - [app-bootstrap/todo](//github.com/app-bootstrap/todo)
+
+## About antd-sample
+
+Give a guiding example of 100% coverage based on Macaca:
+
+- source code: https://github.com/app-bootstrap/web-app-bootstrap/tree/master/antd-sample
+- test case: https://github.com/app-bootstrap/web-app-bootstrap/tree/master/test/antd-sample
+
+```bash
+$ npm run dev:test
+$ npm run test:antd
+```
 
 ## Include
 
@@ -41,7 +53,7 @@ This project follows the git-contributor [spec](https://github.com/xudafeng/git-
 ├── vuex-ts          # vuex & typescript
 ├── unstated         # unstated
 ├── app-bootstrap    # app-boostrap based on Antd mobile
-├── antd-sample    # sample based on Antd
+├── antd-sample      # sample based on Antd
 └── test             # UI test case
 ```
 

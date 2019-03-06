@@ -37,7 +37,7 @@ describe('test/vuex.test.js', () => {
         .quit();
     });
 
-    it.only('setValue vs formatInput', () => {
+    it('setValue vs formatInput', () => {
       return driver
         .elementByCss('#new-todo')
         .domEvent('touchstart')

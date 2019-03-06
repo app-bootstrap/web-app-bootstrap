@@ -64,7 +64,7 @@
     "macaca-cli": "2",
     "macaca-datahub": "2",
     "macaca-electron": "2",
-    "macaca-wd": "2",
+    "macaca-wd": "3",
     "marked": "^0.3.4",
     "mobx": "^3.4.1",
     "mobx-react": "^4.3.5",

@@ -37,23 +37,26 @@ describe('test/vuex.test.js', () => {
         .quit();
     });
 
-    it('setValue vs formatInput', () => {
+    it.only('setValue vs formatInput', () => {
       return driver
         .elementByCss('#new-todo')
-        .elementTouch({
-          type: 'start'
-        })
+        .domEvent('touchstart')
         .elementByCss('#new-todo')
         .formatInput(`input by formatInput ${Date.now()}`)
         .elementByCss('#new-todo')
-        .keyboardEvent('keyUp', 13)
+        .domEvent('keyup', {
+          key: 'Enter',
+          keyCode: 13,
+        })
         .sleep(3000)
         .elementByCss('#new-todo')
         .clear()
         .sendKeys(`input by sendKeys ${Date.now()}`)
         .elementByCss('#new-todo')
-        .keyboardEvent('keyUp', 13)
-        .sleep(3000);
+        .domEvent('keyup', {
+          key: 'Enter',
+          keyCode: 13,
+        });
     });
   });
 });

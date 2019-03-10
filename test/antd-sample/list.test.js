@@ -64,7 +64,7 @@ describe('test/antd-sample/list.test.js', () => {
           scene: 'success',
         })
         .getUrl(`${BASE_URL}/antd-sample`)
-        .elementByCss('#app > div i.anticon.anticon-caret-down.ant-table-column-sorter-down.off')
+        .elementByCss('#app > .ant-layout i.anticon.anticon-caret-down.ant-table-column-sorter-down.off')
         .click()
         .elementByCss('table > tbody > tr:nth-child(1)')
         .text()

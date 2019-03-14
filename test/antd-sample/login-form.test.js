@@ -66,7 +66,7 @@ describe('test/antd-sample/login-form.test.js', () => {
       return driver
         .getUrl(`${BASE_URL}/antd-sample#login`)
         .elementByCss('[accessbilityId="username"]')
-        .formatInput('username')
+        .formInput('username')
         .elementByCss('[accessbilityId="login"]')
         .click()
         .elementByCssOrNull('#app > form > div:nth-child(1) .ant-form-explain')
@@ -77,9 +77,9 @@ describe('test/antd-sample/login-form.test.js', () => {
       return driver
         .getUrl(`${BASE_URL}/antd-sample#login`)
         .elementByCss('[accessbilityId="username"]')
-        .formatInput('username')
+        .formInput('username')
         .elementByCss('[accessbilityId="password"]')
-        .formatInput('password')
+        .formInput('password')
         .elementByCss('[accessbilityId="login"]')
         .click()
         .elementByCssOrNull('#app > form > div:nth-child(1) .ant-form-explain')

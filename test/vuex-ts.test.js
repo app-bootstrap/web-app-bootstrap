@@ -37,10 +37,10 @@ describe('test/vuex-ts.test.js', () => {
         .quit();
     });
 
-    it('setValue vs formatInput', () => {
+    it('setValue vs formInput', () => {
       return driver
         .elementByCss('#new-todo')
-        .formatInput(`input by formatInput ${Date.now()}`)
+        .formInput(`input by formInput ${Date.now()}`)
         .elementByCss('#new-todo')
         .domEvent('keyup', {
           key: 'Enter',

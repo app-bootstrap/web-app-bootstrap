@@ -5,7 +5,8 @@
     'stage-2'
   ],
   plugins: [
-    'transform-decorators-legacy'
+    'transform-decorators-legacy',
+    'transform-runtime'
   ],
   comments: false,
   env: {

@@ -29,6 +29,7 @@ const config = {
     vuex: path.resolve('vuex'),
     flux: path.resolve('flux'),
     redux: path.resolve('redux'),
+    'redux-saga': path.resolve('redux-saga'),
     mobx: path.resolve('mobx'),
     'vuex-ts': path.resolve('vuex-ts'),
     'vue-plain': path.resolve('vue-plain'),

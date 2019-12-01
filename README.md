@@ -47,6 +47,7 @@ $ npm run test:antd
 ```
 ├── flux             # flux
 ├── redux            # redux
+├── redux-saga       # redux-saga
 ├── plain            # vue with event-bus
 ├── mobx             # mobx
 ├── vuex             # vuex

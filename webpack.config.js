@@ -17,7 +17,7 @@ const datahubConfig = {
       hub: 'awesome',
     },
   },
-  showBoard: false,
+  showBoard: true,
 };
 
 const defaultDatahub = new DataHub({

@@ -8,12 +8,12 @@ import ReactDOM from 'react-dom';
 
 import App from './App';
 import reducer from './reducers';
-import sage from './saga';
+import saga from './saga';
 
 const sagaMiddleware = createSagaMiddleware();
 const store = createStore(reducer, applyMiddleware(sagaMiddleware));
 
-sagaMiddleware.run(sage);
+sagaMiddleware.run(saga);
 
 ReactDOM.render(
   <Provider store={store}>

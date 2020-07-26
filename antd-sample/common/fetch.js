@@ -67,5 +67,6 @@ const request = (url, method = 'GET', params = {}) => {
     .then(res => res.json());
 };
 
-module.exports = request;
-module.exports.fetch = fetch;
+request.fetch = fetch;
+
+export default request;

@@ -19,6 +19,7 @@ import {
   notification,
   Spin,
 } from 'antd';
+import TestBot from './testbot.jsx';
 
 const columns = [{
   title: 'Name',
@@ -114,6 +115,7 @@ class App extends React.Component {
           </Spin>
         </Content>
         <Footer/>
+        <TestBot />
       </Layout>
     );
   }

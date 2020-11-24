@@ -121,6 +121,11 @@ const config = {
       'vue$': 'vue/dist/vue.esm.js'
     }
   },
+  externals: {
+    react: 'React',
+    'react-dom': 'ReactDOM',
+    'lodash' : '_',
+  },
   plugins: [
     new VueLoaderPlugin()
   ],

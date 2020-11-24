@@ -103,7 +103,6 @@
     "webpack": "^4.10.0",
     "webpack-cli": "^3.0.1",
     "webpack-dev-server": "^3.1.4",
-    "whatwg-fetch": "^2.0.4",
     "xutil": "1"
   },
   "husky": {

@@ -4,6 +4,7 @@ const path = require('path');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const DataHub = require('macaca-datahub');
 const datahubMiddleware = require('datahub-proxy-middleware');
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
 const datahubConfig = {
   port: 5678,
@@ -26,15 +27,15 @@ const defaultDatahub = new DataHub({
 
 const config = {
   entry: {
-    vuex: path.resolve('vuex'),
-    flux: path.resolve('flux'),
-    redux: path.resolve('redux'),
-    'redux-saga': path.resolve('redux-saga'),
-    mobx: path.resolve('mobx'),
-    'vuex-ts': path.resolve('vuex-ts'),
-    'vue-plain': path.resolve('vue-plain'),
-    unstated: path.resolve('unstated'),
-    'app-bootstrap': path.resolve('app-bootstrap'),
+    // vuex: path.resolve('vuex'),
+    // flux: path.resolve('flux'),
+    // redux: path.resolve('redux'),
+    // 'redux-saga': path.resolve('redux-saga'),
+    // mobx: path.resolve('mobx'),
+    // 'vuex-ts': path.resolve('vuex-ts'),
+    // 'vue-plain': path.resolve('vue-plain'),
+    // unstated: path.resolve('unstated'),
+    // 'app-bootstrap': path.resolve('app-bootstrap'),
     'antd-sample': path.resolve('antd-sample', 'app.jsx'),
   },
   output: {
@@ -124,10 +125,12 @@ const config = {
   externals: {
     react: 'React',
     'react-dom': 'ReactDOM',
-    'lodash' : '_',
+    'lodash': '_',
+    antd: 'antd',
   },
   plugins: [
-    new VueLoaderPlugin()
+    new VueLoaderPlugin(),
+    new BundleAnalyzerPlugin(),
   ],
   devServer: {
     before: app => {

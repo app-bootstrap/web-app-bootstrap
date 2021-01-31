@@ -36,6 +36,7 @@ const config = {
     unstated: path.resolve('unstated'),
     'app-bootstrap': path.resolve('app-bootstrap'),
     'antd-sample': path.resolve('antd-sample', 'app.jsx'),
+    'react-router': path.resolve('react-router'),
   },
   output: {
     path: path.join(__dirname, 'dist'),
@@ -125,6 +126,11 @@ const config = {
     new VueLoaderPlugin()
   ],
   devServer: {
+    historyApiFallback: {
+      rewrites: [
+        { from: /^\/react-router/, to: '/react-router/index.html' },
+      ],
+    },
     before: app => {
       datahubMiddleware(app)(datahubConfig);
     },

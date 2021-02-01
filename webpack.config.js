@@ -126,6 +126,7 @@ const config = {
     new VueLoaderPlugin()
   ],
   devServer: {
+    host: '0.0.0.0',
     historyApiFallback: {
       rewrites: [
         { from: /^\/react-router/, to: '/react-router/index.html' },

@@ -6,6 +6,7 @@ import { createBrowserHistory, createHashHistory } from 'history';
 import Home from './Home.jsx';
 import First from './First.jsx';
 import Second from './Second.jsx';
+import Third from './Third.jsx';
 
 const hashHistory = createHashHistory({
   basename: '/',
@@ -27,6 +28,7 @@ const app = (
       <Route exact path={'/first'} component={First} />
       <Route exact path={'/second'} component={Second} />
     </Switch>
+    <Route exact path={'/third'} children={Third} />
   </Router>
 );
 

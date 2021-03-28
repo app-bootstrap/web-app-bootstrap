@@ -15,6 +15,9 @@ const Home = (props) => {
       <div>
         <Link to="/second">go to second</Link>
       </div>
+      <div>
+        <Link to="/third">go to third</Link>
+      </div>
     </div>
   );
 };

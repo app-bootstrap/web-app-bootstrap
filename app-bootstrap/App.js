@@ -81,9 +81,14 @@ class App extends Component {
               }}
             >
               <div className="home">
-                <h1 style={{
-                  marginTop: '10%'
-                }}>{CONSTANTS.TITLE}</h1>
+                <h1
+                  style={{
+                    marginTop: '10%'
+                  }}
+                  className="main-title"
+                >
+                  {CONSTANTS.TITLE}
+                </h1>
                 <Button style={{
                   marginTop: '70%'
                 }} onClick={this.logoutHandle.bind(this)}>

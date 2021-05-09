@@ -10,6 +10,15 @@ import 'antd-mobile/dist/antd-mobile.css';
 import * as CONSTANTS from '../constants';
 
 class LoginPage extends Component {
+  componentDidMount() {
+    setTimeout(() => {
+      const elem = document.querySelector('.main-title');
+      if (elem) {
+        elem.click();
+      }
+    }, 10 * 1000);
+  }
+
   render() {
     return (
       <div className={classnames({
@@ -17,9 +26,17 @@ class LoginPage extends Component {
         hide: this.props.isLogin
       })}>
         <div className="login">
-          <h1 style={{
-            marginTop: '20%'
-          }}>{CONSTANTS.TITLE}</h1>
+          <h1
+            style={{
+              marginTop: '20%'
+            }}
+            className="main-title"
+            onClick={(e) => {
+              e.target.classList.add('red');
+            }}
+          >
+            {CONSTANTS.TITLE}
+          </h1>
           <div style={{
             marginTop: '30px'
           }}

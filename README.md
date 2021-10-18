@@ -7,13 +7,13 @@
 [![Test coverage][coveralls-image]][coveralls-url]
 [![node version][node-image]][node-url]
 
-[npm-image]: http://img.shields.io/npm/v/web-app-bootstrap.svg?style=flat-square
+[npm-image]: http://img.shields.io/npm/v/web-app-bootstrap.svg
 [npm-url]: http://npmjs.org/package/web-app-bootstrap
-[travis-image]: https://img.shields.io/travis/app-bootstrap/web-app-bootstrap.svg?style=flat-square
+[travis-image]: https://img.shields.io/travis/app-bootstrap/web-app-bootstrap.svg
 [travis-url]: https://travis-ci.org/app-bootstrap/web-app-bootstrap
-[coveralls-image]: https://img.shields.io/coveralls/app-bootstrap/web-app-bootstrap.svg?style=flat-square
+[coveralls-image]: https://img.shields.io/coveralls/app-bootstrap/web-app-bootstrap.svg
 [coveralls-url]: https://coveralls.io/r/app-bootstrap/web-app-bootstrap?branch=master
-[node-image]: https://img.shields.io/badge/node.js-%3E=8-green.svg?style=flat-square
+[node-image]: https://img.shields.io/badge/node.js-%3E=8-green.svg
 [node-url]: http://nodejs.org/download/
 
 <!-- GITCONTRIBUTOR_START -->

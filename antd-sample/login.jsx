@@ -5,61 +5,59 @@ import React from 'react';
 
 import {
   Form,
-  Icon,
   Input,
   Button,
   Checkbox,
 } from 'antd';
+import {
+  UserOutlined,
+  LockOutlined,
+} from '@ant-design/icons';
 
 import './login.less';
 
-class NormalLoginForm extends React.Component {
-  handleSubmit = (e) => {
-    e.preventDefault();
-    this.props.form.validateFields((err, values) => {
-      if (!err) {
-        console.log('Received values of form: ', values);
-      }
-    });
-  }
+const NormalLoginForm = () => {
+  const [form] = Form.useForm();
 
-  render() {
-    const { getFieldDecorator } = this.props.form;
-    return (
-      <Form onSubmit={this.handleSubmit} className="login-form">
-        <Form.Item>
-          {getFieldDecorator('userName', {
-            rules: [{ required: true, message: 'Please input your username!' }],
-          })(
-            <Input accessbilityId="username" prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="Username" />
-          )}
-        </Form.Item>
-        <Form.Item>
-          {getFieldDecorator('password', {
-            rules: [{ required: true, message: 'Please input your Password!' }],
-          })(
-            <Input accessbilityId="password" prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />} type="password" placeholder="Password" />
-          )}
-        </Form.Item>
-        <Form.Item>
-          {getFieldDecorator('remember', {
-            valuePropName: 'checked',
-            initialValue: true,
-          })(
-            <Checkbox>Remember me</Checkbox>
-          )}
-          <a className="login-form-forgot" href="">Forgot password</a>
-          <Button accessbilityId="login" type="primary" htmlType="submit" className="login-form-button">
-            Log in
-          </Button>
-          Or <a href="">register now!</a>
-        </Form.Item>
-      </Form>
-    );
-  }
-}
+  const onFinish = (values) => {
+    console.log('Received values of form: ', values);
+  };
 
-const WrappedNormalLoginForm = Form.create({ name: 'normal_login' })(NormalLoginForm);
+  return (
+    <Form
+      form={form}
+      onFinish={onFinish}
+      className="login-form"
+      initialValues={{
+        remember: true,
+      }}
+    >
+      <Form.Item
+        name="username"
+        rules={[{ required: true, message: 'Please input your username!' }]}
+      >
+        <Input accessbilityId="username" prefix={<UserOutlined style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="Username" />
+      </Form.Item>
+      <Form.Item
+        name="password"
+        rules={[{ required: true, message: 'Please input your Password!' }]}
+      >
+        <Input accessbilityId="password" prefix={<LockOutlined style={{ color: 'rgba(0,0,0,.25)' }} />} type="password" placeholder="Password" />
+      </Form.Item>
+      <Form.Item
+        name="remember"
+        valuePropName="checked"
+      >
+        <Checkbox>Remember me</Checkbox>
+        <a className="login-form-forgot" href="">Forgot password</a>
+        <Button accessbilityId="login" type="primary" htmlType="submit" className="login-form-button">
+          Log in
+        </Button>
+        Or <a href="">register now!</a>
+      </Form.Item>
+    </Form>
+  );
+};
 
 export default class Login extends React.Component {
   constructor (props) {
@@ -72,6 +70,6 @@ export default class Login extends React.Component {
   }
 
   render () {
-    return <WrappedNormalLoginForm />;
+    return <NormalLoginForm />;
   }
 }

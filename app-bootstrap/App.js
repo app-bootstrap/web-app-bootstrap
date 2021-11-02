@@ -4,8 +4,8 @@ import {
   Button,
   TabBar,
   NavBar,
-  Icon
 } from 'antd-mobile';
+import { LeftOutline } from 'antd-mobile-icons';
 import classnames from 'classnames';
 import 'antd-mobile/dist/antd-mobile.css';
 
@@ -49,7 +49,7 @@ class App extends Component {
         >
           <NavBar
             mode="light"
-            icon={<Icon type="left" />}
+            icon={<LeftOutline />}
           >
             {this.state.selectedTab}
           </NavBar>

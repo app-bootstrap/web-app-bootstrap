@@ -126,16 +126,19 @@ const config = {
     new VueLoaderPlugin()
   ],
   devServer: {
-    host: '0.0.0.0',
+    hot: true,
     historyApiFallback: {
       rewrites: [
         { from: /^\/react-router/, to: '/react-router/index.html' },
       ],
     },
-    before: app => {
+    static: {
+      directory: __dirname,
+    },
+    onBeforeSetupMiddleware: ({ app }) => {
       datahubMiddleware(app)(datahubConfig);
     },
-    after: () => {
+    onAfterSetupMiddleware: () => {
       defaultDatahub.startServer(datahubConfig)
         .then(() => {});
     }

@@ -4,8 +4,8 @@
   "method": "ALL",
   "projectUniqId": "23db2d5a-d9fe-4d5c-bf80-73eb8282f0fc",
   "description": "get list data",
-  "currentScene": "empty",
+  "currentScene": "success",
   "proxyConfig": {},
   "uniqId": "debf0525-6188-483d-8ff8-ac62b5f6da8e",
-  "groupUniqId": "35af4e78-2db4-4b66-9686-2f21eba322f9"
+  "groupUniqId": "b59640e5-51a1-412a-bafb-c6beeef75bd7"
 }

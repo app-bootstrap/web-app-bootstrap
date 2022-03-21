@@ -1,8 +1,9 @@
 'use strict';
 
 const path = require('path');
-const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const DataHub = require('macaca-datahub');
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const datahubMiddleware = require('datahub-proxy-middleware');
 
 const datahubConfig = {
@@ -89,31 +90,64 @@ const config = {
         exclude: /node_modules/
       }, {
         test: /\.less$/,
+        exclude(filePath) {
+          return filePath.endsWith('.module.less');
+        },
         use: [
           {
-            loader: 'style-loader'
+            loader: MiniCssExtractPlugin.loader,
           },
           {
-            loader: 'css-loader'
+            loader: 'css-loader',
           },
           {
-            loader: 'less-loader'
+            loader: 'less-loader',
+            options: {
+              lessOptions: {
+                javascriptEnabled: true,
+                math: 'always',
+              },
+            },
           },
-          {
-            loader: 'postcss-loader'
-          }
-        ]
-      }, {
-        test: /\.css$/,
+        ],
+      },
+      {
+        test: /\.module\.less$/,
         use: [
           {
-            loader: 'style-loader'
+            loader: MiniCssExtractPlugin.loader,
           },
           {
-            loader: 'css-loader'
-          }
-        ]
-      }
+            loader: 'css-loader',
+            options: {
+              modules: {
+                auto: true,
+                localIdentName: '[name]_[local]_[hash:base64:5]',
+              },
+            },
+          },
+          {
+            loader: 'less-loader',
+            options: {
+              lessOptions: {
+                javascriptEnabled: true,
+                math: 'always',
+              },
+            },
+          },
+        ],
+      },
+      {
+        test: /.css$/,
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+          },
+          {
+            loader: 'css-loader',
+          },
+        ],
+      },
     ]
   },
   resolve: {
@@ -123,6 +157,10 @@ const config = {
     }
   },
   plugins: [
+    new MiniCssExtractPlugin({
+      filename: '[name].css',
+      chunkFilename: '[name].css',
+    }),
     new VueLoaderPlugin()
   ],
   devServer: {

@@ -84,11 +84,6 @@ const config = {
           'tslint-loader'
         ]
       }, {
-        test: /\.json$/,
-        loader: 'json-loader',
-        type: 'javascript/auto',
-        exclude: /node_modules/
-      }, {
         test: /\.less$/,
         exclude(filePath) {
           return filePath.endsWith('.module.less');

@@ -3,14 +3,14 @@
 ---
 
 [![NPM version][npm-image]][npm-url]
-[![build status][travis-image]][travis-url]
+[![CI][CI-image]][CI-url]
 [![Test coverage][coveralls-image]][coveralls-url]
 [![node version][node-image]][node-url]
 
 [npm-image]: http://img.shields.io/npm/v/web-app-bootstrap.svg
 [npm-url]: http://npmjs.org/package/web-app-bootstrap
-[travis-image]: https://img.shields.io/travis/app-bootstrap/web-app-bootstrap.svg
-[travis-url]: https://travis-ci.org/app-bootstrap/web-app-bootstrap
+[CI-image]: https://github.com/app-bootstrap/web-app-bootstrap/actions/workflows/ci.yml/badge.svg
+[CI-url]: https://github.com/app-bootstrap/web-app-bootstrap/actions/workflows/ci.yml
 [coveralls-image]: https://img.shields.io/coveralls/app-bootstrap/web-app-bootstrap.svg
 [coveralls-url]: https://coveralls.io/r/app-bootstrap/web-app-bootstrap?branch=master
 [node-image]: https://img.shields.io/badge/node.js-%3E=8-green.svg

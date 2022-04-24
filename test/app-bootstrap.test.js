@@ -14,6 +14,8 @@ describe('test/app-bootstrap.test.js', () => {
     before(() => {
       return driver
         .initWindow({
+          platformName: 'playwright',
+          browserName: 'chromium',
           width: 375,
           height: 667,
           deviceScaleFactor: 2

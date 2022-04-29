@@ -3,6 +3,7 @@
 import {
   webpackHelper
 } from 'macaca-wd';
+import path from 'path';
 
 const {
   driver,
@@ -18,7 +19,10 @@ describe('test/app-bootstrap.test.js', () => {
           browserName: 'chromium',
           width: 375,
           height: 667,
-          deviceScaleFactor: 2
+          deviceScaleFactor: 2,
+          recordVideo: {
+            dir: path.resolve(__dirname, '..', 'reports', 'screenshots'),
+          },
         });
     });
 
@@ -30,6 +34,7 @@ describe('test/app-bootstrap.test.js', () => {
     afterEach(function () {
       return driver
         .coverage()
+        .saveVideos(this)
         .saveScreenshots(this);
     });
 

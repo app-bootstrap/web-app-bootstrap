@@ -48,7 +48,7 @@
     "antd-mobile-icons": "^0.2.2",
     "babel-eslint": "^9.0.0",
     "babel-loader": "^8.0.0",
-    "babel-plugin-istanbul": "^6.1.1",
+    "babel-plugin-istanbul": "6",
     "classnames": "^2.2.5",
     "cross-env": "^5.1.1",
     "css-loader": "^6.7.1",

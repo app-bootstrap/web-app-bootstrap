@@ -1,4 +1,6 @@
-{
+'use strict';
+
+module.exports = {
   "presets": [
     "@babel/preset-react",
     "@babel/preset-env"
@@ -29,8 +31,8 @@
   "env": {
     "test": {
       "plugins": [
-        "istanbul"
-      ]
-    }
+        "istanbul",
+      ],
+    },
   }
-}
+};

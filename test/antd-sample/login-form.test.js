@@ -51,7 +51,7 @@ describe('test/antd-sample/login-form.test.js', () => {
   });
 
   describe('login form submit', () => {
-    it('validator logic should be correct', () => {
+    it.skip('validator logic should be correct', () => {
       return driver
         .getUrl(`${BASE_URL}/antd-sample#login`)
         .elementByCss('[accessbilityId="login"]')

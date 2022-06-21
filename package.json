@@ -22,7 +22,7 @@
     "test": "npm run clean:coverage && macaca run -d ./test --verbose",
     "test:antd": "npm run clean:coverage && macaca run -d ./test/antd-sample --coverage-ignore \"antd-sample/common\" --verbose",
     "clean:coverage": "rm -rf coverage",
-    "ci": "./ci.sh",
+    "ci": "concurrently \"npm run dev:test\" \"npm run test:antd\"",
     "reliable": "reliable report -c ./macaca-reliable.config.js",
     "contributor": "git-contributor"
   },
@@ -50,6 +50,7 @@
     "babel-loader": "^8.0.0",
     "babel-plugin-istanbul": "6",
     "classnames": "^2.2.5",
+    "concurrently": "^7.2.2",
     "cross-env": "^5.1.1",
     "css-loader": "^6.7.1",
     "datahub-proxy-middleware": "4",

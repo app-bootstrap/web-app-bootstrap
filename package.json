@@ -18,7 +18,7 @@
     "lint": "eslint --fix . --ext .vue,.jsx,.js && stylelint --fix assets/**/*.less -s less",
     "build": "cross-env NODE_ENV=production webpack",
     "prepublish": "npm run build",
-    "test": "npm run clean:report && macaca run -d ./test --verbose",
+    "test": "npm run clean && macaca run -d ./test --verbose",
     "test:antd": "npm run clean && macaca run -d ./test/antd-sample --coverage-ignore \"antd-sample/common\" --verbose",
     "clean": "rm -rf report coverage",
     "ci": "concurrently \"npm run dev:test\" \"npm run test:antd\"",

@@ -32,7 +32,6 @@ const config = {
     redux: path.resolve('redux'),
     'redux-saga': path.resolve('redux-saga'),
     mobx: path.resolve('mobx'),
-    'vuex-ts': path.resolve('vuex-ts'),
     'vue-plain': path.resolve('vue-plain'),
     unstated: path.resolve('unstated'),
     'app-bootstrap': path.resolve('app-bootstrap'),

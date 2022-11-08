@@ -76,7 +76,7 @@
     "macaca-datahub": "4",
     "macaca-playwright": "1",
     "macaca-reporter": "1",
-    "macaca-wd": "3",
+    "macaca-wd": "4",
     "marked": "^0.3.4",
     "mini-css-extract-plugin": "^2.6.0",
     "mobx": "^3.4.1",

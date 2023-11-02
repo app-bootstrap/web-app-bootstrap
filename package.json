@@ -13,7 +13,7 @@
     "url": "https://github.com/app-bootstrap/web-app-bootstrap.git"
   },
   "scripts": {
-    "dev": "cross-env NODE_ENV=development webpack serve",
+    "dev": "webpack serve",
     "dev:test": "cross-env NODE_ENV=test npm run dev",
     "lint": "eslint --fix . --ext .vue,.jsx,.js && stylelint --fix assets/**/*.less -s less",
     "build": "cross-env NODE_ENV=production webpack",
@@ -103,7 +103,7 @@
     "vue-loader": "^15.2.1",
     "vue-template-compiler": "^2.5.13",
     "vuex": "^3.0.1",
-    "webpack": "^5.69.1",
+    "webpack": "5",
     "webpack-cli": "^4.9.0",
     "webpack-dev-server": "^4.7.4",
     "whatwg-fetch": "^2.0.4",

@@ -93,7 +93,7 @@ class App extends React.Component {
     }
     return (
       <Layout>
-        <Header className="header"></Header>
+        <Header className="header" />
         <Content style={{ padding: 30 }}>
           <Select
             className="test-list"
@@ -113,7 +113,7 @@ class App extends React.Component {
             <Table columns={columns} dataSource={this.state.dataList} />
           </Spin>
         </Content>
-        <Footer/>
+        <Footer />
       </Layout>
     );
   }

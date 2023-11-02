@@ -6,6 +6,12 @@ const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const datahubMiddleware = require('datahub-proxy-middleware');
 
+const {
+  NODE_ENV,
+} = process.env;
+
+const isProd = NODE_ENV === 'production';
+
 const datahubConfig = {
   port: 5678,
   hostname: '127.0.0.1',
@@ -26,6 +32,7 @@ const defaultDatahub = new DataHub({
 });
 
 const config = {
+  mode: isProd ? 'production' : 'development',
   entry: {
     vuex: path.resolve('vuex'),
     flux: path.resolve('flux'),
@@ -40,7 +47,7 @@ const config = {
   },
   output: {
     path: path.join(__dirname, 'dist'),
-    publicPath: 'dist',
+    publicPath: '/dist',
     filename: '[name].js'
   },
   module: {
@@ -145,7 +152,12 @@ const config = {
     ]
   },
   resolve: {
-    extensions: ['.ts', '.js', '.vue', '.json'],
+    extensions: [
+      '.ts', '.tsx',
+      '.js', '.jsx',
+      '.vue',
+      '.json',
+    ],
     alias: {
       'vue$': 'vue/dist/vue.esm.js'
     }

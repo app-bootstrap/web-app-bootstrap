@@ -6,29 +6,36 @@ export const MyComponent = () => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.div}>
-        <div className={styles.pZvKR}>
-          <div className={styles.zTgKe}>
-            <span className={styles.span}>数据总览</span>
-            <span className={styles.qJDnm}>你的每一份成长都记录</span>
+        <span className={styles.span}>个人知识创作</span>
+        <div className={styles.divDep4_1}>
+          <div className={styles.divDep5_1}>
+            <span className={styles.spanDep6_1}>478W</span>
+            <span className={styles.spanDep6_2}>总字数</span>
           </div>
-          <div className={styles.kBVol}>近 1 年</div>
+          <div className={styles.divDep5_2}>
+            <div className={styles.divDep6_1}>
+              <span className={styles.spanDep7_1}>3,779</span>
+              <span className={styles.spanDep7_2}>文档</span>
+            </div>
+            <div className={styles.divDep6_2}>
+              <span className={styles.spanDep7_3}>172</span>
+              <span className={styles.spanDep7_4}>知识库</span>
+            </div>
+          </div>
         </div>
-        <div className={styles.xEqUH}>
-          <div className={styles.xYuOG}>
-            <span className={styles.vHYtO}>创作天数</span>
-            <span className={styles.fCtBp}>160</span>
+        <div className={styles.divDep4_2}>
+          <div className={styles.divDep5_3}>
+            <span className={styles.spanDep6_3}>1,607</span>
+            <span className={styles.spanDep6_4}>小记</span>
           </div>
-          <div className={styles.xYuOG}>
-            <span className={styles.vHYtO}>创作字数</span>
-            <span className={styles.fCtBp}>14,385</span>
-          </div>
-          <div className={styles.oSVrf}>
-            <span className={styles.jlPlf}>内容更新</span>
-            <span className={styles.aAiBx}>1,807</span>
-          </div>
-          <div className={styles.oSVrf}>
-            <span className={styles.jlPlf}>获得点赞</span>
-            <span className={styles.aAiBx}>413</span>
+          <div className={styles.divDep5_4}>
+            <div className={styles.divDep6_3}>
+              <span className={styles.spanDep7_5}>小记</span>
+            </div>
+            <div className={styles.divDep6_4}>
+              <span className={styles.spanDep7_6}>1</span>
+              <span className={styles.spanDep7_7}>1000</span>
+            </div>
           </div>
         </div>
       </div>

@@ -11,8 +11,6 @@ import './app.less';
 import fetch from './common/fetch';
 import Login from './login.jsx';
 
-import { MyComponent } from './MyComponent';
-import { MyComponent as MyComponent2 } from './MyComponent2/MyComponent';
 import styles from './app.module.less';
 
 import {
@@ -101,10 +99,6 @@ class App extends React.Component {
         <div className={styles.myComponent}>
           <h3>MyComponent</h3>
           <MyComponent />
-        </div>
-        <div className={styles.myComponent}>
-          <h3>MyComponent2</h3>
-          <MyComponent2 />
         </div>
         <Content style={{ padding: 30 }}>
           <Select
